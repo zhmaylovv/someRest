@@ -22,6 +22,9 @@ public class Menu {
         menuItemList.add(new MenuItem("Add", PersonDAO::addPerson));
         menuItemList.add(new MenuItem("Show", PersonDAO::show));
         menuItemList.add(new MenuItem("Show sorted unique", PersonDAO::showSorted));
+        menuItemList.add(new MenuItem("Save to file ", PersonDAO::saveToFile));
+        menuItemList.add(new MenuItem("Read from file ", PersonDAO::readFromFile));
+        menuItemList.add(new MenuItem("Clear data in memory ", PersonDAO::clear));
         this.menuString = "";
     }
 
