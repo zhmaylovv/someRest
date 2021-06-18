@@ -30,7 +30,7 @@ class PersonDAOTest {
     }
 
     @Test
-    void show() {
+    void checkShowMethod() {
         Scanner scanner = new Scanner(System.in);
         List<Person> personList = new ArrayList<>();
         personList.add(new Person("dd", "dd"));
@@ -39,5 +39,21 @@ class PersonDAOTest {
         PersonDAO.show(personList, scanner);
         Assertions.assertEquals("person: firstName='dd', lastName='dd'",
                 outputStreamCaptor.toString().trim());
+    }
+
+    @Test
+    void checkShowSortedMethod() {
+        Scanner scanner = new Scanner(System.in);
+        List<Person> personList = new ArrayList<>();
+        personList.add(new Person("dd", "dd"));
+        personList.add(new Person("dd", "dd"));
+        personList.add(new Person("dd", "aa"));
+        ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStreamCaptor));
+        PersonDAO.showSorted(personList, scanner);
+        Assertions.assertEquals("person: firstName='dd', lastName='aa'\n" +
+                        "person: firstName='dd', lastName='dd'",
+                outputStreamCaptor.toString().trim());
+
     }
 }
