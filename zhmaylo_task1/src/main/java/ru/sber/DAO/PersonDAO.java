@@ -1,7 +1,11 @@
 package ru.sber.DAO;
 
+import ru.sber.controllers.FileIOController;
 import ru.sber.entity.Person;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.*;
 
 
@@ -36,5 +40,16 @@ public class PersonDAO {
         TreeSet<Person> unic = new TreeSet<>(Comparator.comparing(Person::getLastName));
         unic.addAll(personList);
         unic.forEach(System.out::println);
+    }
+
+    public static void saveToFile(List<Person> personList, Scanner scanner) {
+        FileIOController.writeToFile(personList, "./src/main/resources/personList");
+    }
+    public static void readFromFile(List<Person> personList, Scanner scanner) {
+        personList.addAll(FileIOController.readPersonListFromFile(personList, "./src/main/resources/personList"));
+        }
+
+    public static void clear(List<Person> personList, Scanner scanner) {
+        personList.clear();
     }
 }
