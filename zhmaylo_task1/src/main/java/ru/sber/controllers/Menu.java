@@ -21,6 +21,7 @@ public class Menu {
         menuItemList.add(new MenuItem("Exit", PersonDAO::exit));
         menuItemList.add(new MenuItem("Add", PersonDAO::addPerson));
         menuItemList.add(new MenuItem("Show", PersonDAO::show));
+        menuItemList.add(new MenuItem("Show sorted unique", PersonDAO::showSorted));
         this.menuString = "";
     }
 
@@ -43,6 +44,7 @@ public class Menu {
                 itemChoice.Execute(personList, scanner);
             }catch (Exception e){
                 System.out.println("Bad request, check correctness of the input.");
+                System.out.println(e.getMessage());
             }
         }
     }

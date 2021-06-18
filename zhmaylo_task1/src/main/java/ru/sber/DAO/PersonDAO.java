@@ -2,11 +2,13 @@ package ru.sber.DAO;
 
 import ru.sber.entity.Person;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class PersonDAO {
-    public static void addPerson(List<Person> personList, Scanner scanner){
+
+
+    public static void addPerson(List<Person> personList, Scanner scanner) {
         System.out.println("Please enter first and last name of person, split by space. " +
                 "For add to person list. ");
         String input = scanner.nextLine();
@@ -21,11 +23,18 @@ public class PersonDAO {
     }
 
 
-    public static void exit(List<Person> personList, Scanner scanner){
+    public static void exit(List<Person> personList, Scanner scanner) {
         System.exit(0);
     }
 
     public static void show(List<Person> personList, Scanner scanner) {
+        personList.sort(Comparator.comparing(Person::getLastName).thenComparing(Person::getLastName));
         personList.forEach(System.out::println);
+    }
+
+    public static void showSorted(List<Person> personList, Scanner scanner) {
+        TreeSet<Person> unic = new TreeSet<>(Comparator.comparing(Person::getLastName));
+        unic.addAll(personList);
+        unic.forEach(System.out::println);
     }
 }
