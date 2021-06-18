@@ -1,4 +1,4 @@
-package entity;
+package ru.sber.entity;
 
 public class Person {
     private String firstName;
