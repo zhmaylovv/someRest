@@ -5,11 +5,14 @@ import ru.sber.entity.Person;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Класс MenuItem определяет шаблон элемента меню.
+ */
 public class MenuItem {
     private final String name;
     private final Exec exec;
 
-    public MenuItem(String name, Exec exec){
+    public MenuItem(String name, Exec exec) {
         this.exec = exec;
         this.name = name;
     }
@@ -18,7 +21,7 @@ public class MenuItem {
         return name;
     }
 
-    public void Execute (List<Person> personList, Scanner scanner) {
+    public void Execute(List<Person> personList, Scanner scanner) {
         exec.exec(personList, scanner);
     }
 }

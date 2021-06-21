@@ -16,18 +16,21 @@ import java.util.Scanner;
 class PersonDAOTest {
 
     @Test
-    @Disabled
     void addPerson() {
-        Scanner scanner = new Scanner(System.in);
         List<Person> personList = new ArrayList<>();
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStreamCaptor));
         InputStream in = new ByteArrayInputStream("Vasiliy Zhmaylo".getBytes());
         System.setIn(in);
+        Scanner scanner = new Scanner(System.in);
         PersonDAO.addPerson(personList, scanner);
-        Assertions.assertEquals("Added new person: firstName='Vasiliy', lastName='Zhmaylo'",
+        Assertions.assertEquals("Please enter first and last name of person, split by space. For add to person list. \n" +
+                        "Person added to list",
                 outputStreamCaptor.toString().trim());
     }
+
+
+
 
     @Test
     void checkShowMethod() {
@@ -55,5 +58,13 @@ class PersonDAOTest {
                         "person: firstName='dd', lastName='dd'",
                 outputStreamCaptor.toString().trim());
 
+    }
+
+    @Test
+    void checkClear(){
+        List<Person> personList = new ArrayList<>();
+        personList.add(new Person("test", "test"));
+        PersonDAO.clear(personList, null);
+        Assertions.assertEquals(0, personList.size());
     }
 }
