@@ -1,4 +1,4 @@
-package ru.sber.part1;
+package ru.sber.part1Iterator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

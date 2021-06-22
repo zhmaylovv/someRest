@@ -1,4 +1,4 @@
-package ru.sber;
+package ru.sber.part1Iterator;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
