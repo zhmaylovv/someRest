@@ -32,7 +32,7 @@ class FindDuplicatesTest {
         testList2.add("test4");
         testList2.add("test5");
         testList2.add("test3");
-        List<String> result = new ArrayList<>(FindDuplicates.findDuplicatesBySet(testList1, testList2));
+        List<String> result = new ArrayList<>(FindDuplicates.findDuplicatesByFor(testList1, testList2));
         Assertions.assertEquals("test3", result.get(0));
     }
 
