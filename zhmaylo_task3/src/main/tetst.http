@@ -2,7 +2,7 @@ POST http://localhost:8080/message/offer
 Content-Type: application/json
 
 {
-  "message": "content"
+  "message": "content6"
 }
 
 ### GET request with a header

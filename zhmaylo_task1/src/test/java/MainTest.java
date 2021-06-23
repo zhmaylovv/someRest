@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ru.sber.Main;
 import ru.sber.entity.Person;
 
 import java.io.ByteArrayOutputStream;
