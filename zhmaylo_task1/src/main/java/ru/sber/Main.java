@@ -1,3 +1,5 @@
+package ru.sber;
+
 import ru.sber.controllers.Menu;
 import ru.sber.entity.Person;
 

@@ -1,0 +1,28 @@
+POST http://localhost:8080/message/offer
+Content-Type: application/json
+
+{
+  "message": "content6"
+}
+
+### GET request with a header
+GET http://localhost:8080/message/
+Accept: application/json
+
+
+### GET request with a header
+GET http://localhost:8080/message/all
+Accept: application/json
+
+
+### GET request with a header
+GET http://localhost:8080/message/peekMax
+Accept: application/json
+
+### GET request with a header
+GET http://localhost:8080/message/peek
+Accept: application/json
+
+### GET request with a header
+GET http://localhost:8080/message/poll
+Accept: application/json
